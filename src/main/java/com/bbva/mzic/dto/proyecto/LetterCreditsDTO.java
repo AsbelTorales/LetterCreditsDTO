@@ -6,55 +6,67 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-/**
- * The LetterCreditsDTO class...
- */
+
+//The LetterCreditsDTO class...
+ 
 public class LetterCreditsDTO implements Serializable  {
 	private static final long serialVersionUID = 2931699728946643245L;
 
-	/* Attributes section for the DTO */
+	//Attributes section for the DTO 
 
-	/**
-	 * The name attribute
-	 */
-	private String name;
+	private String letter;
+	private String reference;
+	private int secuence;
+	private List<BanksDTO> banks;
+	private CustomerDTO customer;
 
-	/**
-	 * The surname attribute
-	 */
-	private String surname;
+}
+    // Getters y Setters
 
-	/**
-	 * Get the name attribute
-	 */
-	public String getName() {
-		return this.name;
-	}
+    public String getLetter() {
+        return letter;
+    }
 
-	/**
-	 * Set the name attribute
-	 */
-	public void setName(final String name) {
-		this.name = name;
-	}
+    public void setLetter(String letter) {
+        this.letter = letter;
+    }
 
-	/**
-	 * Get the surname attribute
-	 */
-	public String getSurname() {
-		return this.surname;
-	}
+    public String getReference() {
+        return reference;
+    }
 
-	/**
-	 * Set the surname attribute
-	 */
-	public void setSurname(final String surname) {
-		this.surname = surname;
-	}
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
 
-	/**
-	 * Indicates whether some other object is "equal to" this one.
-	 */
+    public int getSecuence() {
+        return sequence;
+    }
+
+    public void setSecuence(int secuence) {
+        this.secuence = secuence;
+    }
+
+    public List<BanksDTO> getBanks() {
+        return banks;
+    }
+
+    public void setBanks(List<BanksDTO> banks) {
+        this.banks = banks;
+    }
+
+    public CustomerDTO getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(CustomerDTO customer) {
+        this.customer = customer;
+    }
+
+	
+	
+	//Indicates whether some other object is "equal to" this one.
+	 
 	@Override
 	public boolean equals(final Object obj) {
 		if (obj == null) { return false; }
@@ -64,19 +76,25 @@ public class LetterCreditsDTO implements Serializable  {
 		}
 		final LetterCreditsDTO rhs = (LetterCreditsDTO) obj;
 		return new EqualsBuilder().appendSuper(super.equals(obj))
-					.append(name, rhs.name)
-					.append(surname, rhs.surname)
+					.append(letter, rhs.letter)
+					.append(reference, rhs.reference)
+					.append(secuence, rhs.secuence)
+					.append(banks, rhs.banks)
+					.append(custumer, rhs.custumer)
 					.isEquals();
 	}
 
-	/**
-	 * Returns a hash code value for the object.
-	 */
+	
+	//Returns a hash code value for the object.
+	 
 	@Override
 	public int hashCode() {
 		return new HashCodeBuilder()
-			.append(this.name)
-			.append(this.surname)
+			.append(this.letter)
+			.append(this.reference)
+			.append(this.secuence)
+			.append(this.banks)
+			.append(this.custumer)
 			.toHashCode();
 	}
 
@@ -87,8 +105,11 @@ public class LetterCreditsDTO implements Serializable  {
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this)
-			.append("name", name)
-			.append("surname", surname)
+			.append("letter", letter)
+			.append("reference", reference)
+			.append("secuence", secuence)
+			.append("banks", banks)
+			.append("custumer", custumer)
 			.toString();
 	}
-}
+
